@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulls & Cows</title>
+    <link rel="stylesheet" href="./styles/main.css">
+  </head>
+  <body>
+    <h1>Bulls & Cows</h1>
+    <div class="content">
+      <section class="results">
+        <div class="results__header">
+          <p>Guessed</p>
+          <p>Cows</p>
+          <p>Bulls</p>
+        </div>
+      </section>
+      <section class="input">
+        <form class="input__user">
+          <input
+            type="text"
+            name=""
+            pattern="\d"
+            maxlength="1"
+            id="first_number"
+            class="input__area"
+            required
+            >
+          <input
+            type="text"
+            name=""
+            maxlength="1"
+            pattern="\d"
+            id="second_number"
+            class="input__area"
+            required
+            >
+          <input
+            type="text"
+            name=""
+            pattern="\d"
+            maxlength="1"
+            id="third_number"
+            class="input__area"
+            required
+            >
+          <input
+            type="text"
+            name=""
+            pattern="\d"
+            maxlength="1"
+            id="fourth_number"
+            class="input__area"
+            required
+            >
+          <button type="submit" class="input__submit">check</button>
+        </form>
+
+        <p class="input__error"></p>
+      </section>
+    </div>
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </body>
+</html>
