@@ -8,6 +8,7 @@ const error = document.querySelector('.input__error');
 
 const generateRandomDigit = () => `${Math.floor(Math.random() * 10)}`;
 const machineNumber = generateNumber();
+let counter = 1;
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -21,9 +22,12 @@ form.addEventListener('submit', event => {
   }
 
   if (!uniqueSymbols.test(userInput)) {
-    error.innerHTML = 'IDIOT!!!';
+    error.innerHTML = 'The digits must be all different!';
+  } else if (counter > 7) {
+    error.innerHTML = `The game is over. Correct answer was ${machineNumber}`;
   } else {
-    error.innerHTML = 'Well done';
+    error.innerHTML = 'Nice try';
+    counter++;
     resultsRow(userInput);
   }
 });
@@ -42,14 +46,20 @@ function resultsRow(userInput) {
 
   const cows = document.createElement('div');
 
-  cows.classList.add('results__cows');
+  cows.classList.add('results__item');
   cows.innerHTML = bullAndCows(machineNumber, userInput)['cows'];
   row.appendChild(cows);
 
   const bulls = document.createElement('div');
 
-  bulls.classList.add('results__bulls');
-  bulls.innerHTML = bullAndCows(machineNumber, userInput)['bulls'];
+  bulls.classList.add('results__item');
+
+  const bullsAmount = bullAndCows(machineNumber, userInput)['bulls'];
+
+  if (bullsAmount === 4) {
+    error.innerHTML = 'And we have a winner!';
+  }
+  bulls.innerHTML = bullsAmount;
   row.appendChild(bulls);
 }
 
