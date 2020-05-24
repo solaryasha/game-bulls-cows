@@ -1,0 +1,10 @@
+.results {
+
+  &__row {
+    display: flex;
+
+    & > * {
+      margin-right: 2rem;
+    }
+  }
+}

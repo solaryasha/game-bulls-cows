@@ -1,7 +1,13 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks";
 
 body {
   background: $c-gray;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
 }
