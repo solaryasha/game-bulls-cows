@@ -1,4 +1,5 @@
-'use strict';
+
+import { bullsAndCows } from './bullsAndCows.js';
 
 const results = document.querySelector('.results');
 const form = document.querySelector('.input__user');
@@ -47,14 +48,14 @@ function resultsRow(userInput) {
   const cows = document.createElement('div');
 
   cows.classList.add('results__item');
-  cows.innerHTML = bullAndCows(machineNumber, userInput)['cows'];
+  cows.innerHTML = bullsAndCows(machineNumber, userInput)['cows'];
   row.appendChild(cows);
 
   const bulls = document.createElement('div');
 
   bulls.classList.add('results__item');
 
-  const bullsAmount = bullAndCows(machineNumber, userInput)['bulls'];
+  const bullsAmount = bullsAndCows(machineNumber, userInput)['bulls'];
 
   if (bullsAmount === 4) {
     error.innerHTML = 'And we have a winner!';
@@ -78,37 +79,37 @@ function generateNumber() {
   return generatedNumber;
 }
 
-function bullAndCows(generatedNumber, enteredNumber) {
-  // write code here
-  const storage = {};
-  let cows = 0;
-  let bulls = 0;
+// function bullsAndCows(generatedNumber, enteredNumber) {
+//   // write code here
+//   const storage = {};
+//   let cows = 0;
+//   let bulls = 0;
 
-  for (let i = 0; i < generatedNumber.length; i++) {
-    storage[generatedNumber[i]] = i;
-  }
+//   for (let i = 0; i < generatedNumber.length; i++) {
+//     storage[generatedNumber[i]] = i;
+//   }
 
-  for (let i = 0; i < enteredNumber.length; i++) {
-    const currentValue = enteredNumber[i];
-    // check for repeating numbers
+//   for (let i = 0; i < enteredNumber.length; i++) {
+//     const currentValue = enteredNumber[i];
+//     // check for repeating numbers
 
-    if (currentValue === enteredNumber[i + 1]) {
-      return undefined;
-    }
+//     if (currentValue === enteredNumber[i + 1]) {
+//       return undefined;
+//     }
 
-    if (storage.hasOwnProperty(currentValue)) {
-      if (storage[currentValue] === i) {
-        bulls++;
-      } else {
-        cows++;
-      }
-    }
-  }
+//     if (storage.hasOwnProperty(currentValue)) {
+//       if (storage[currentValue] === i) {
+//         bulls++;
+//       } else {
+//         cows++;
+//       }
+//     }
+//   }
 
-  const yourAnswer = {
-    'bulls': bulls,
-    'cows': cows,
-  };
+//   const yourAnswer = {
+//     'bulls': bulls,
+//     'cows': cows,
+//   };
 
-  return yourAnswer;
-}
+//   return yourAnswer;
+// }
