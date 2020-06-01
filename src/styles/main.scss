@@ -1,7 +1,23 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks";
 
 body {
   background: $c-gray;
+}
+
+span {
+  display: inline-block;
+  width: 50px;
+  margin-right: 2rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+
+p {
+  margin: 0;
 }

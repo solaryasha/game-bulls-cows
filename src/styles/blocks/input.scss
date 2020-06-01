@@ -1,0 +1,39 @@
+.input {
+  &__user {
+    display: flex;
+
+  }
+
+  &__area {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+
+    text-align: center;
+
+    background-color: #c7d9eb;
+    border: 1px solid #7a8a99;
+
+    font-size: 32px;
+  }
+
+  &__submit {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+
+    margin-left: 2rem;
+    outline: none;
+    background-color: #2060f6;
+    border: none;
+    border-radius: 50%;
+
+    color: #fff;
+  }
+  &__error {
+    color: hsl(0, 100%, 74%);
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
